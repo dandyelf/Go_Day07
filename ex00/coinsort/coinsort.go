@@ -1,5 +1,10 @@
 package coinsort
 
+import (
+	"slices"
+	"sort"
+)
+
 func MinCoins(val int, coins []int) []int {
 	res := make([]int, 0)
 	i := len(coins) - 1
@@ -15,4 +20,31 @@ func MinCoins(val int, coins []int) []int {
 
 func MinCoins2(val int, coins []int) []int {
 	return []int{2, 2, 2}
+}
+
+// Optimized
+func MinCoins3(val int, coins []int) []int {
+	res := make([]int, 0)
+
+	// Sort coins
+	if !sort.IntsAreSorted(coins) {
+		sort.Ints(coins)
+	}
+
+	// Remove duplicates
+	coins = slices.Compact(coins)
+
+	for i := len(coins) - 1; i >= 0; i-- {
+
+		if val >= coins[i] {
+			qty := val / coins[i]
+			val = val % coins[i]
+
+			for k := 1; k <= qty; k++ {
+				res = append(res, coins[i])
+			}
+		}
+	}
+
+	return res
 }

@@ -21,3 +21,18 @@ func TestCreateImage(t *testing.T) {
 		t.Error(u + strconv.Itoa(test))
 	}
 }
+
+func TestMinCoins3(t *testing.T) {
+	want := 1563412123342
+	coinDenominations := []int{1000, 20, 200, 100, 2, 5000, 10, 5, 1, 50}
+	res := coinsort.MinCoins3(want, coinDenominations)
+
+	got := 0
+	for _, v := range res {
+		got += v
+	}
+
+	if got != want {
+		t.Errorf("Got %v, want %v", got, want)
+	}
+}
