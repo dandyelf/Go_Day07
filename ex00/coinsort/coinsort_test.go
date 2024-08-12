@@ -26,15 +26,15 @@ func TestMinCoins2(t *testing.T) {
 	}
 }
 
-func TestMinCoins3(t *testing.T) {
+func MinCoins2Optimized(t *testing.T) {
 	got := coinsort.MinCoins2Optimized(amout, coinDenominations)
 
 	if !reflect.DeepEqual(got, want) {
 		t.FailNow()
 	}
 }
-func TestMinCoins4(t *testing.T) {
-	got := coinsort.MinCoins4(amout, coinDenominations)
+func TestMinCoins2OptimizedRutine(t *testing.T) {
+	got := coinsort.MinCoins2OptimizedRutine(amout, coinDenominations)
 
 	if !reflect.DeepEqual(got, want) {
 		t.FailNow()

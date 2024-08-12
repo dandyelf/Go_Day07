@@ -83,7 +83,7 @@ func (r *Result) Add(coin int, qty int) {
 }
 
 // Function
-func MinCoins4(val int, coins []int) []int {
+func MinCoins2OptimizedRutine(val int, coins []int) []int {
 	res := Result{slice: make([]int, 0)}
 
 	if !slices.IsSorted(coins) {
