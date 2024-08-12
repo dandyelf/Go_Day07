@@ -18,6 +18,7 @@ func MinCoins(val int, coins []int) []int {
 }
 
 func MinCoins2(val int, coins []int) []int {
+
 	return []int{2, 2, 2}
 }
 
