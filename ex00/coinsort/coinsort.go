@@ -40,7 +40,7 @@ func MinCoins2(val int, coins []int) []int {
 }
 
 // Optimized
-func MinCoins3(val int, coins []int) []int {
+func MinCoins2Optimized(val int, coins []int) []int {
 	res := make([]int, 0)
 
 	if !slices.IsSorted(coins) {
