@@ -2,7 +2,6 @@ package coinsort
 
 import (
 	"slices"
-	"sort"
 )
 
 func MinCoins(val int, coins []int) []int {
@@ -27,8 +26,8 @@ func MinCoins3(val int, coins []int) []int {
 	res := make([]int, 0)
 
 	// Sort coins
-	if !sort.IntsAreSorted(coins) {
-		sort.Ints(coins)
+	if !slices.IsSorted(coins) {
+		slices.Sort(coins)
 	}
 
 	// Remove duplicates
