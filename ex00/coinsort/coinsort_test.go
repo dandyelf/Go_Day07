@@ -8,7 +8,7 @@ import (
 
 const u = "coin err"
 
-func TestCreateImage(t *testing.T) {
+func TestMinCoins(t *testing.T) {
 	mass := coinsort.MinCoins(10, []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12})
 	if len(mass) == 0 {
 		t.Error(u)
