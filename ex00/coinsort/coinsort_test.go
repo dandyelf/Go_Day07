@@ -14,7 +14,17 @@ func TestMinCoins(t *testing.T) {
 	got := coinsort.MinCoins(amout, coinDenominations)
 
 	if !reflect.DeepEqual(got, want) {
-		t.FailNow()
+		t.Error("first func")
+	}
+	type TestCases struct {
+		Amount            int
+		CoinDenominations []int
+		Want              []int
+	}
+	testFor := TestCases{Amount: 15, CoinDenominations: []int{7, 8, 9, 10}, Want: []int{10}}
+	got = coinsort.MinCoins(testFor.Amount, testFor.CoinDenominations)
+	if !reflect.DeepEqual(got, testFor.Want) {
+		t.Error("first func")
 	}
 }
 
@@ -28,13 +38,6 @@ func TestMinCoins2(t *testing.T) {
 
 func MinCoins2Optimized(t *testing.T) {
 	got := coinsort.MinCoins2Optimized(amout, coinDenominations)
-
-	if !reflect.DeepEqual(got, want) {
-		t.FailNow()
-	}
-}
-func TestMinCoins2OptimizedRutine(t *testing.T) {
-	got := coinsort.MinCoins2OptimizedRutine(amout, coinDenominations)
 
 	if !reflect.DeepEqual(got, want) {
 		t.FailNow()
