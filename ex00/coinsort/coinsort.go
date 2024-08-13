@@ -24,7 +24,6 @@ func MinCoins2(val int, coins []int) []int {
 	if !slices.IsSorted(coins) {
 		slices.Sort(coins)
 	}
-	coins = slices.Compact(coins)
 
 	i := len(coins) - 1
 	for i >= 0 {

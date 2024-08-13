@@ -20,12 +20,9 @@ func MinCoins(val int, coins []int) []int {
 // Fixed
 func MinCoins2(val int, coins []int) []int {
 	res := make([]int, 0)
-
 	if !slices.IsSorted(coins) {
 		slices.Sort(coins)
 	}
-	coins = slices.Compact(coins)
-
 	i := len(coins) - 1
 	for i >= 0 {
 		for val >= coins[i] {
@@ -38,42 +35,41 @@ func MinCoins2(val int, coins []int) []int {
 }
 
 // Optimized
-/*
-func MinCoins2Optimized(val int, coins []int) []int {
-	res := make([]int, 0)
 
+// func MinCoins2Optimized(val int, coins []int) []int {
+// 	res := make([]int, 0)
+
+// 	if !slices.IsSorted(coins) {
+// 		slices.Sort(coins)
+// 	}
+// 	coins = slices.Compact(coins)
+
+// 	for i := len(coins) - 1; i >= 0; i-- {
+
+// 		if val >= coins[i] {
+// 			qty := val / coins[i]
+// 			val = val % coins[i]
+
+// 			for k := 1; k <= qty; k++ {
+// 				res = append(res, coins[i])
+// 			}
+// 		}
+// 	}
+
+// 	return res
+// }
+
+func MinCoins2Optimized(value int, coins []int) []int {
+	result := []int{}
 	if !slices.IsSorted(coins) {
 		slices.Sort(coins)
 	}
 	coins = slices.Compact(coins)
-
-	for i := len(coins) - 1; i >= 0; i-- {
-
-		if val >= coins[i] {
-			qty := val / coins[i]
-			val = val % coins[i]
-
-			for k := 1; k <= qty; k++ {
-				res = append(res, coins[i])
-			}
+	for i := len(coins) - 1; i >= 0 && value > 0; i-- {
+		for value >= coins[i] {
+			value -= coins[i]
+			result = append(result, coins[i])
 		}
 	}
-
-	return res
-}
-*/
-
-func MinCoins2Optimized(val int, coins []int) []int {
-	res := make([]int, 0)
-	for i := len(coins) - 1; i >= 0; i-- {
-		count := val / coins[i]
-		if count > 0 {
-			// Добавляем нужное количество монет в результат
-			for j := 0; j < count; j++ {
-				res = append(res, coins[i])
-			}
-			val -= count * coins[i]
-		}
-	}
-	return res
+	return result
 }
