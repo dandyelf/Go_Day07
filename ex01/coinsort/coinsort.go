@@ -38,6 +38,7 @@ func MinCoins2(val int, coins []int) []int {
 }
 
 // Optimized
+/*
 func MinCoins2Optimized(val int, coins []int) []int {
 	res := make([]int, 0)
 
@@ -58,5 +59,21 @@ func MinCoins2Optimized(val int, coins []int) []int {
 		}
 	}
 
+	return res
+}
+*/
+
+func MinCoins2Optimized(val int, coins []int) []int {
+	res := make([]int, 0)
+	for i := len(coins) - 1; i >= 0; i-- {
+		count := val / coins[i]
+		if count > 0 {
+			// Добавляем нужное количество монет в результат
+			for j := 0; j < count; j++ {
+				res = append(res, coins[i])
+			}
+			val -= count * coins[i]
+		}
+	}
 	return res
 }
