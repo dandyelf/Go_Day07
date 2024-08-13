@@ -68,7 +68,7 @@ func TestMinCoinsFail(t *testing.T) {
 	want = []int{3, 3}
 	got := coinsort.MinCoins(amout, coinDenominations)
 	if !reflect.DeepEqual(got, want) {
-		t.Error("amout: ", amout, "coinDenominations", coinDenominations, "want: ", want, "got: ", got)
+		t.Error("amout: ", amout, "coinDenominations: ", coinDenominations, "want: ", want, "got: ", got)
 	}
 }
 

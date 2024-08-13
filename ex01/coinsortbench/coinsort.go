@@ -1,6 +1,7 @@
-package coinsort
+package coinsortbench
 
 import (
+	"math"
 	"slices"
 )
 
@@ -35,17 +36,32 @@ func MinCoins2(val int, coins []int) []int {
 }
 
 // Optimized
-func MinCoins2Optimized(value int, coins []int) []int {
-	result := []int{}
-	if !slices.IsSorted(coins) {
-		slices.Sort(coins)
+func MinCoins2Optimized(val int, coins []int) []int {
+	dp := make([]int, val+1)
+	usedCoins := make([]int, val+1)
+	for i := 1; i <= val; i++ {
+		dp[i] = math.MaxInt32
 	}
-	coins = slices.Compact(coins)
-	for i := len(coins) - 1; i >= 0 && value > 0; i-- {
-		for value >= coins[i] {
-			value -= coins[i]
-			result = append(result, coins[i])
+	dp[0] = 0
+
+	for _, denom := range coins {
+		for j := denom; j <= val; j++ {
+			if dp[j-denom]+1 < dp[j] {
+				dp[j] = dp[j-denom] + 1
+				usedCoins[j] = denom
+			}
 		}
 	}
+
+	if dp[val] == math.MaxInt32 {
+		return []int{}
+	}
+
+	result := []int{}
+	for val > 0 {
+		result = append(result, usedCoins[val])
+		val -= usedCoins[val]
+	}
+
 	return result
 }

@@ -7,5 +7,5 @@ ex00:
 	cd ./ex00/coinsort && go test -v .
 
 ex01:
-	cd ./ex01/coinsort && go test -benchmem -bench=.
+	cd ./ex01/coinsortbench && go test -benchmem -bench=.
 	
