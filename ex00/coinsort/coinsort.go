@@ -37,17 +37,40 @@ func MinCoins2(val int, coins []int) []int {
 }
 
 // Optimized
-func MinCoins2Optimized(value int, coins []int) []int {
-	result := []int{}
+// func MinCoins2Optimized(value int, coins []int) []int {
+// 	result := []int{}
+// 	if !slices.IsSorted(coins) {
+// 		slices.Sort(coins)
+// 	}
+// 	coins = slices.Compact(coins)
+// 	for i := len(coins) - 1; i >= 0 && value > 0; i-- {
+// 		for value >= coins[i] {
+// 			value -= coins[i]
+// 			result = append(result, coins[i])
+// 		}
+// 	}
+// 	return result
+// }
+
+func MinCoins2Optimized(val int, coins []int) []int {
+	res := make([]int, 0)
+
 	if !slices.IsSorted(coins) {
 		slices.Sort(coins)
 	}
 	coins = slices.Compact(coins)
-	for i := len(coins) - 1; i >= 0 && value > 0; i-- {
-		for value >= coins[i] {
-			value -= coins[i]
-			result = append(result, coins[i])
+
+	for i := len(coins) - 1; i >= 0; i-- {
+
+		if val >= coins[i] {
+			qty := val / coins[i]
+			val = val % coins[i]
+
+			for k := 1; k <= qty; k++ {
+				res = append(res, coins[i])
+			}
 		}
 	}
-	return result
+
+	return res
 }
