@@ -1,11 +1,11 @@
-.PHONY: ex00
+.PHONY: ex01 ex00
 all: tests
 
-tests: ex00
+tests: ex01 ex00
 
 ex00:
 	cd ./ex00/coinsort && go test -v .
 
 ex01:
-	cd ./cmd/site_server && go run .
+	cd ./ex01/coinsort && go test -benchmem -bench=.
 	
