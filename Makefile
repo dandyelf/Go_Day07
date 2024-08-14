@@ -1,4 +1,4 @@
-.PHONY: ex01 ex00
+.PHONY: ex01 ex00 ex02
 all: tests
 
 tests: ex01 ex00
@@ -13,3 +13,6 @@ bench:
 
 cputop:
 	cd ./ex01 && go build . && ./ex01 && go tool pprof -top cpu.prof | head -n 17 > top10.txt
+
+ex02:
+	cd ex02/coinsortdocument && go doc coinsortdocument > documentation.html
