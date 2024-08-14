@@ -5,6 +5,7 @@ import (
 	"slices"
 )
 
+// Original
 func MinCoins(val int, coins []int) []int {
 	res := make([]int, 0)
 	i := len(coins) - 1
@@ -20,25 +21,42 @@ func MinCoins(val int, coins []int) []int {
 
 // Fixed
 func MinCoins2(val int, coins []int) []int {
-	res := make([]int, 0)
+	dp := make([]int, val+1)
+	usedCoins := make([]int, val+1)
 
-	if !slices.IsSorted(coins) {
-		slices.Sort(coins)
+	for i := 1; i <= val; i++ {
+		dp[i] = math.MaxInt32
 	}
 
-	i := len(coins) - 1
-	for i >= 0 {
-		for val >= coins[i] {
-			val -= coins[i]
-			res = append(res, coins[i])
+	dp[0] = 0
+
+	for _, denom := range coins {
+		for j := denom; j <= val; j++ {
+			if dp[j-denom]+1 < dp[j] {
+				dp[j] = dp[j-denom] + 1
+				usedCoins[j] = denom
+			}
 		}
-		i -= 1
 	}
-	return res
+
+	if dp[val] == math.MaxInt32 {
+		return []int{}
+	}
+
+	result := []int{}
+	for val > 0 {
+		result = append(result, usedCoins[val])
+		val -= usedCoins[val]
+	}
+	return result
 }
 
 // Optimized
 func MinCoins2Optimized(val int, coins []int) []int {
+	if !slices.IsSorted(coins) {
+		slices.Sort(coins)
+	}
+	coins = slices.Compact(coins)
 	dp := make([]int, val+1)
 	usedCoins := make([]int, val+1)
 
