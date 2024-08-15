@@ -1,0 +1,233 @@
+using module mode; GOMOD=/Users/leftrana/projects/Go_Day07/go.mod
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>coinsortdocument - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="/lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="/lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.22.3";</script>
+<script src="/lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="/pkg/">GoDoc</a></div>
+<a href="#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package coinsortdocument
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "leftrana/moneybag/ex02/coinsortdocument"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				<p>This package provides functions for finding the minimum number of coins needed to make a given value.
+<p>For get this doccument, do: &apos;godoc -url &quot;<a href="http://localhost:6060/pkg/leftrana/moneybag/ex02/coinsortdocument/">http://localhost:6060/pkg/leftrana/moneybag/ex02/coinsortdocument/</a>&quot; &gt; page.html&apos;
+First, make sure you have GOPATH=$HOME/go and $GOPATH/bin in your PATH.
+Next &apos;go install golang.org/x/tools/cmd/godoc&apos; to install the godoc tool.
+
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+				
+				<dd><a href="#MinCoins">func MinCoins(val int, coins []int) []int</a></dd>
+			
+				
+				<dd><a href="#MinCoins2">func MinCoins2(val int, coins []int) []int</a></dd>
+			
+				
+				<dd><a href="#MinCoins2Optimized">func MinCoins2Optimized(val int, coins []int) []int</a></dd>
+			
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="/src/leftrana/moneybag/ex02/coinsortdocument/coinsortdocument.go">coinsortdocument.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+		
+			
+			
+			<h2 id="MinCoins">func <a href="/src/leftrana/moneybag/ex02/coinsortdocument/coinsortdocument.go?s=733:774#L10">MinCoins</a>
+				<a class="permalink" href="#MinCoins">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func MinCoins(val <a href="/pkg/builtin/#int">int</a>, coins []<a href="/pkg/builtin/#int">int</a>) []<a href="/pkg/builtin/#int">int</a></pre>
+			<p>Original
+<p>This function finds the minimum number of coins needed to make a given value.
+It does this by iterating over the coins in reverse order and subtracting each coin from the value as many times as possible.
+The resulting coins are appended to a result slice, which is then returned.
+
+			
+			
+
+		
+			
+			
+			<h2 id="MinCoins2">func <a href="/src/leftrana/moneybag/ex02/coinsortdocument/coinsortdocument.go?s=1777:1819#L35">MinCoins2</a>
+				<a class="permalink" href="#MinCoins2">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func MinCoins2(val <a href="/pkg/builtin/#int">int</a>, coins []<a href="/pkg/builtin/#int">int</a>) []<a href="/pkg/builtin/#int">int</a></pre>
+			<p>Fixed
+<p>This function finds the minimum number of coins needed to make a given value using dynamic programming. It first initializes a dp slice and a usedCoins slice.
+The dp slice stores the minimum number of coins needed to make each value from 0 to val.
+The usedCoins slice stores the coin used to make each value.
+The function then iterates over each coin and for each coin, it iterates over each value from the coin value to val.
+If the number of coins needed to make the current value using the current coin is less than the current number of coins needed to make the current value,
+it updates the dp slice and the usedCoins slice.
+<p>Finally, if the dp slice for the final value is still the maximum integer, it returns an empty slice.
+Otherwise, it iterates over the usedCoins slice to build the result slice and returns it.
+
+			
+			
+
+		
+			
+			
+			<h2 id="MinCoins2Optimized">func <a href="/src/leftrana/moneybag/ex02/coinsortdocument/coinsortdocument.go?s=2556:2607#L73">MinCoins2Optimized</a>
+				<a class="permalink" href="#MinCoins2Optimized">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func MinCoins2Optimized(val <a href="/pkg/builtin/#int">int</a>, coins []<a href="/pkg/builtin/#int">int</a>) []<a href="/pkg/builtin/#int">int</a></pre>
+			<p>Optimized
+<p>This function is an optimized version of MinCoins2.
+It first checks if the coins slice is sorted and if not, it sorts it. It then removes any duplicate coins from the slice.
+<p>The function then proceeds as MinCoins2, but with the optimized coins slice.
+
+			
+			
+
+		
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.22.3.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>
