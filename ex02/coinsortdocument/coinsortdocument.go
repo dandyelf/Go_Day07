@@ -1,6 +1,6 @@
 // This package provides functions for finding the minimum number of coins needed to make a given value.
 /*
-For get this doccument, do: 'godoc -url "http://localhost:6060/pkg/leftrana/moneybag/ex02/coinsortdocument/" > page.html'
+For get this doccument, do: 'godoc -url "/pkg/leftrana/moneybag/ex02/coinsortdocument/" > doc.html'
 First, make sure you have GOPATH=$HOME/go and $GOPATH/bin in your PATH.
 Next 'go install golang.org/x/tools/cmd/godoc' to install the godoc tool.
 */
